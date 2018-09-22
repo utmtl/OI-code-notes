@@ -1,4 +1,4 @@
-//ÏßĞÔÉ¸Ä£°å 
+//çº¿æ€§ç­›æ¨¡æ¿
 #include<iostream>
 using namespace std;
 long long n,m;
