@@ -43,7 +43,7 @@ int main()
 	{
 		if(find(e[i].f)!=find(e[i].t)){
 			u(e[i].t,e[i].f);
-			s=max(e[i].w,s);
+			s=max(e[i].w,s); //注意时间不是全部累加
 			cnt++;
 		}
 		if(cnt==m-1) break;
