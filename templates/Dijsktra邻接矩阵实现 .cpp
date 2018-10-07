@@ -1,4 +1,4 @@
-//DijsktraÁÚ½Ó¾ØÕóÊµÏÖ 
+//Dijsktraé‚»æ¥çŸ©é˜µå®ç° 
 #include<iostream>
 #include<cstdio>
 #include<cstring>
@@ -14,7 +14,7 @@ int main()
     while(cin>>n>>m)
     {
         int a,b,w;
-        //³õÊ¼»¯map¿ÉÒÔ²»ÓÃÁ½ÖØfor£º 
+        //åˆå§‹åŒ–mapå¯ä»¥ä¸ç”¨ä¸¤é‡forï¼š 
         memset(map,0x3f,sizeof(map));
         for(int i=0;i<n;i++) map[i][i]=0;
         memset(bo,0,sizeof(bo));
@@ -23,7 +23,7 @@ int main()
             scanf("%d%d%d",&a,&b,&w);
             map[a][b]=min(map[a][b],w);
             map[b][a]=min(map[b][a],w);
-            //¿Óµã£ºÍ¬Ò»Ìõ±ß¿ÉÄÜÖØ¸´ÊäÈë£¬Ò»¶¨ÒªÈ¡Ò»ÏÂmin 
+            //å‘ç‚¹ï¼šåŒä¸€æ¡è¾¹å¯èƒ½é‡å¤è¾“å…¥ï¼Œä¸€å®šè¦å–ä¸€ä¸‹min 
         }
         scanf("%d%d",&s,&t);
         for(int i=0;i<n;i++) dis[i]=map[s][i];
@@ -34,13 +34,12 @@ int main()
         {
         	int minn=maxw;
         	u=-1; 
-        	for(int j=0;j<n;j++) if(bo[j]==0 && dis[j]<minn) minn=dis[j],u=j; //ÕÒµ½dis×îĞ¡²¢ÇÒÃ»·ÃÎÊ¹ıµÄÄÇ¸öµã×÷ÎªËÉ³ÚµÄÆğµã 
-        	if(u==-1) break; //È«²¿ÒÑ·ÃÎÊÔòÒÑÍê³É 
-        	bo[u]=1; //±ê¼ÇÎªÒÑ·ÃÎÊ 
-        	for(int j=0;j<n;j++) //ËÉ³Ú 
+        	for(int j=0;j<n;j++) if(bo[j]==0 && dis[j]<minn) minn=dis[j],u=j; //æ‰¾åˆ°disæœ€å°å¹¶ä¸”æ²¡è®¿é—®è¿‡çš„é‚£ä¸ªç‚¹ä½œä¸ºæ¾å¼›çš„èµ·ç‚¹ 
+        	if(u==-1) break; //å…¨éƒ¨å·²è®¿é—®åˆ™å·²å®Œæˆ 
+        	bo[u]=1; //æ ‡è®°ä¸ºå·²è®¿é—® 
+        	for(int j=0;j<n;j++) //æ¾å¼› 
         	{
         		if(map[u][j]+dis[u]<dis[j]) dis[j]=map[u][j]+dis[u];
-			}
 		}
         if(dis[t]!=maxw) printf("%d\n",dis[t]);
         else printf("-1\n");
