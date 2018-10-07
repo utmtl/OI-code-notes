@@ -41,8 +41,8 @@ int main()
         	{
         		if(map[u][j]+dis[u]<dis[j]) dis[j]=map[u][j]+dis[u];
 		}
-        if(dis[t]!=maxw) printf("%d\n",dis[t]);
-        else printf("-1\n");
+        	if(dis[t]!=maxw) printf("%d\n",dis[t]);
+        	else printf("-1\n");
 	}
     return 0;
 }
