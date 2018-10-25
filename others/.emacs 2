@@ -1,0 +1,23 @@
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+;;全选
+(global-set-key (kbd "C-z") 'undo)
+;;一键撤销
+(global-set-key (kbd "RET") 'newline-and-indent)
+;;换行时自动缩进
+(cua-mode t)
+;;Windows的剪切复制粘贴键
+(show-paren-mode t)
+(global-linum-mode t)
+;;括号匹配，显示行号
+(setq kill-ring-max 200)
+;;撤销的缓存开大点
+(setq default-cursor-type 'bar)
+(setq default-tab-width 4)
+;;默认tab宽度
+(setq c-default-style "awk")
+;;缩进风格
+(set-background-color "gray15")
+(set-foreground-color "gray")
+;;背景颜色（白的太亮了）前景颜色也要跟着改
+(set-frame-parameter (selected-frame) 'alpha (list 85 50))
+;;透明度（一边敲代码一边看题还是舒服多了）
