@@ -24,7 +24,7 @@ ll find(ll x)
 	if(x!=f[x]){
 		ll root=find(f[x]); //注意要先find维护好排在前面的战舰,才能把这个x到根的dis算出来
 		dis[x]+=dis[f[x]];
-		f[x]=root;
+		f[x]=root; //路径压缩
 	}
 	return f[x];
 }
