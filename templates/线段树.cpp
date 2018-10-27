@@ -74,8 +74,8 @@ ll ask_max(ll p,ll l,ll r)
     //若此节点代表的区间包含于询问的区间中,直接返回这个区间的信息作为_候选信息_
 	spread(p);
 	ll v=LLONG_MIN; //long long的最小值. 各种数据类型的极限值包含于头文件<climits>中 
-	if(l<=mid) v=max(v,ask_max(p*2,l,r)); //只递归(将节点代表的区间缩小到)左子树(左半边区间)
-	if(r>mid) v=max(v,ask_max(p*2+1,l,r)); //只递归(将节点代表的区间缩小到)右子树(右半边区间)
+	if(l<=mid) v=max(v,ask_max(p*2,l,r)); //左子节点有重叠
+	if(r>mid) v=max(v,ask_max(p*2+1,l,r)); //右子节点有重叠
 	return v;
 }
 ll ask_sum(ll p,ll l,ll r)
