@@ -24,6 +24,7 @@ int main()
 	list<int>::iterator it;//指向一个int链表的迭代器it, 类似于指针
 	it=lb.begin();
 	advance(it,3);//相当于it+=3. 但迭代器只重载了++和--运算符, 没有+, -操作, advance()相当于重复++或--
+	//PS: advance是前进的意思
 	//CE: lb.insert(lb.begin()+3,4);
 	lb.insert(it,4);//在it前(即begin+3 即第四个元素前)插入元素4
 	for(it=lb.begin();it!=lb.end();it++)
