@@ -63,7 +63,7 @@ signed main()
             ans+=e[i].w;
             ++cnt;
         }
-        if(cnt==n-1) break;
+        if(cnt==n-1) break;//一棵n个节点的树有n-1条边
     }
     printf("%lld\n",ans);
     return 0;
