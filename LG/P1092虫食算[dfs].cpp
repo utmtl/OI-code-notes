@@ -20,12 +20,12 @@ bool f=false;
 void dfs(int step)
 {
 	if(f) return;//已经得到了答案, 直接return, 不然会浪费大量时间!!!
-	if(mmp[a[1][0]]+mmp[a[2][0]]>n) return;
+	if(mmp[a[1][0]]+mmp[a[2][0]]>n) return;//剪枝1 最高位不能再进位
 	for(re int i=n-1;i>=0;--i)
 	{
 		if(mmp[a[1][i]]==-1 || mmp[a[2][i]]==-1 || mmp[a[3][i]]==-1) continue;
 		if(((mmp[a[1][i]]+mmp[a[2][i]]+1)%n!=mmp[a[3][i]]) &&((mmp[a[1][i]]+mmp[a[2][i]])%n!=mmp[a[3][i]])) return;
-	}
+	}//剪枝2 不能出现1+1=3等完全不成立的 注意有进位和不进位两种情况
 	if(step==n)
 	{
 		if(chk())
