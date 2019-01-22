@@ -36,7 +36,7 @@ void dfs(int step)
 		f=true;
 		return;
 	}	
-	for(re int i=n-1;i>=0;--i)
+	for(re int i=n-1;i>=0;--i)//倒着搜是常用的防毒瘤数据技巧
 	{
 		if(!used[i])
 		{
