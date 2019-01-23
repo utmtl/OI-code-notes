@@ -51,7 +51,7 @@
 ;;;;;设置编译信息
 (defun compile-file ()
   (interactive)
-  (compile (format "g++ -o %s %s -g -lm -Wall -std=c++11"  (file-name-sans-extension (buffer-name))(buffer-name))))
+  (compile (format "g++ -o '%s' '%s' -g -lm -Wall -std=c++11"  (file-name-sans-extension (buffer-name))(buffer-name))))
 ;;(global-set-key (kbd "<f9>") 'compile-file)
 ;;;;;设置一键调试
 ;;;;;改变emacs标题栏的标题
