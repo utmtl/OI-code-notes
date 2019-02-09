@@ -16,7 +16,7 @@ signed main()
 		scanf("%lld%lld",&u,&v);
 		e[u-1][v-1]=e[v-1][u-1]=1;
 	}
-	for(re int i=0;i<n;++i) f[1<<i][i]=1;//相邻两点间路径条数为1
+	for(re int i=0;i<n;++i) f[1<<i][i]=1;//每个节点自己到自己路径条数为1
 	for(re int i=1;i<=1<<n;++i)
 	{
 		for(re int j=0;j<n;++j)
