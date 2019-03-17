@@ -17,23 +17,24 @@ int ksm(int a,int k,int yyb)
     return ans;
 }
 const int jzm=51347;
-int hs[jzm],head[jzm],nxt[jzm],val[jzm],cnt;
+int yk[jzm],head[jzm],nxt[jzm],val[jzm],cnt;
 void insert(int key,int v)
 {
     int k=key%jzm;
-    hs[cnt]=key,val[cnt]=v,nxt[cnt]=head[k],head[k]=cnt++;
+    yk[cnt]=key,val[cnt]=v,nxt[cnt]=head[k],head[k]=cnt++;//head[k]记录key%jzm为k的一条val链
 }
 int find(int key)
 {
     int k=key%jzm;
-    for(re int i=head[k];i!=-1;i=nxt[i])
-        if(hs[i]==key) return val[i];
+    for(re int i=head[k];i!=-1;i=nxt[i])//遍历key%jzm为k的val链
+        if(yk[i]==key) return val[i];
     return -1;
 }
 int bsgs(int a,int b,int yyb)
 {
     cnt=0;
     memset(head,-1,sizeof(head));
+	memset(nxt,-1,sizeof(nxt));
     b%=yyb;
     int t=sqrt(yyb)+1,s=1;
     for(re int i=0;i<t;++i){insert(b*s%yyb,i);s=s*a%yyb;}
