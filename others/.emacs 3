@@ -1,0 +1,46 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(blink-cursor-mode nil)
+ '(cua-mode t nil (cua-base))
+ '(cursor-type (quote bar))
+ '(custom-enabled-themes (quote (tango-dark)))
+ '(inhibit-startup-screen t)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(set-frame-parameter (selected-frame) 'alpha (list 25 25)) 
+(add-to-list 'default-frame-alist (cons 'alpha (list 85 85)))
+
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key [f9] 'compile-file)
+(global-set-key (kbd "C-p ") 'compile-file)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key [f12] 'super-compile-file)
+(global-set-key [f10] 'gud-gdb)
+(setq tap-width 6)
+(setq-default c-basic-offset 6)
+(setq scroll-step 1
+      scroll-margin 5
+      scroll-conservatively 10000
+      )
+(defun compile-file ()
+  (interactive)
+  (compile (format "g++ -o %s %s -lm -Wall -g -std=c++11 -O2" (file-name-sans-extension (buffer-name))(buffer-name) (file-name-sans-extension (buffer-name))))
+  )
+
+(defun super-compile-file ()
+  (interactive)
+  (compile (format "g++ -o %s %s -lm -Wall -g -std=c++11 -Ofast" (file-name-sans-extension (buffer-name))(buffer-name) (file-name-sans-extension (buffer-name))))
+  )
